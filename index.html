@@ -3,129 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta
-    name="description"
-    content="Product preview card featuring Gabrielle Essence Eau De Parfum."
-  >
-
+  <meta name="description" content="A responsive product preview card for Gabrielle Essence Eau De Parfum.">
   <title>Product Preview Card | Frontend Mentor</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="./style.css">
-
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-green: hsl(158, 36%, 37%);
+      --color-green-dark: hsl(158, 42%, 18%);
+      --color-cream: hsl(30, 38%, 92%);
+      --color-ink: hsl(212, 21%, 14%);
+      --color-gray: hsl(228, 12%, 48%);
+      --font-body: "Montserrat", sans-serif;
+      --font-heading: "Fraunces", serif;
+    }
+  </style>
 </head>
 
-<body>
+<body class="min-h-screen bg-cream font-body text-[13px] font-medium text-gray">
 
-  <!-- Main Content -->
-  <main class="page">
+  <main class="grid min-h-screen place-items-center p-6">
 
-    <!-- Product Card -->
-    <article class="product-card">
+    <article class="w-full max-w-84 overflow-hidden rounded-[10px] bg-white sm:grid sm:max-w-150 sm:grid-cols-2">
 
-      <!-- Product Image -->
-      <picture class="product-image">
-
-        <source
-          media="(max-width: 600px)"
-          srcset="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=85"
-        >
-
+      <picture class="block sm:h-full">
+        <source media="(max-width: 639px)" srcset="./images/image-product-mobile.jpg">
         <img
-          src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85"
-          alt="Perfume bottle"
+          src="./images/image-product-desktop.jpg"
+          alt="Gabrielle Chanel perfume bottle surrounded by greenery"
+          class="block h-full w-full object-cover"
         >
-
       </picture>
 
-      <!-- Product Information -->
-      <section class="product-info">
+      <section class="p-6 sm:flex sm:flex-col sm:justify-center sm:p-8">
 
-        <!-- Product Category -->
-        <p class="category">PERFUME</p>
+        <p class="mb-4 text-xs uppercase tracking-[0.3em]">Perfume</p>
 
-        <!-- Product Name -->
-        <h1>Gabrielle Essence Eau De Parfum</h1>
+        <h1 class="mb-4 font-heading text-[32px] leading-[1.1] font-bold text-ink">
+          Gabrielle Essence Eau De Parfum
+        </h1>
 
-        <!-- Product Description -->
-        <p class="description">
+        <p class="mb-6 leading-relaxed">
           A floral, solar and voluptuous interpretation composed by
           Olivier Polge, Perfumer-Creator for the House of CHANEL.
         </p>
 
-        <!-- Product Prices -->
-        <div class="prices">
-
-          <span class="current-price">$149.99</span>
-
-          <span class="original-price">
-            <span class="sr-only">Original price: </span>
-            $169.99
-          </span>
-
+        <div class="mb-5 flex items-center gap-6">
+          <span class="font-heading text-[32px] font-bold text-green">$149.99</span>
+          <s class="text-gray"><span class="sr-only">Original price:</span>$169.99</s>
         </div>
 
-        <!-- Add to Cart Button -->
         <button
-          class="cart-button"
           type="button"
           aria-label="Add perfume to cart"
+          class="cart-button flex w-full cursor-pointer items-center justify-center gap-3 rounded-lg bg-green p-4 text-[15px] font-bold text-white transition hover:bg-green-dark focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-ink"
         >
-
-          <!-- Shopping Cart Icon -->
-          <svg
-            class="cart-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M1 1H3L5 11H13L15 4H4"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-
-            <circle
-              cx="6"
-              cy="14"
-              r="1.2"
-              fill="currentColor"
-            />
-
-            <circle
-              cx="12"
-              cy="14"
-              r="1.2"
-              fill="currentColor"
-            />
-
+          <svg class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M1 1H3L5 11H13L15 4H4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="6" cy="14" r="1.2" fill="currentColor"/>
+            <circle cx="12" cy="14" r="1.2" fill="currentColor"/>
           </svg>
-
           <span>Add to Cart</span>
-
         </button>
 
-        <!-- Button Feedback -->
-        <p
-          class="cart-message"
-          role="status"
-          aria-live="polite"
-        ></p>
+        <p class="cart-message mt-3 min-h-5 text-center font-bold text-green" role="status" aria-live="polite"></p>
 
       </section>
 
@@ -133,12 +78,11 @@
 
   </main>
 
-  <!-- JavaScript -->
   <script>
     const cartButton = document.querySelector(".cart-button");
     const cartMessage = document.querySelector(".cart-message");
 
-    cartButton.addEventListener("click", function () {
+    cartButton.addEventListener("click", () => {
       cartMessage.textContent = "Product added to cart!";
     });
   </script>
