@@ -1,0 +1,13 @@
+﻿{
+  "name": "product-preview-card-tailwind",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --minify"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "tailwindcss": "^4.0.0"
+  }
+}

@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Product preview card featuring Gabrielle Essence Eau De Parfum."
+  >
+
+  <title>Product Preview Card | Frontend Mentor</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+  <!-- Main Content -->
+  <main class="page">
+
+    <!-- Product Card -->
+    <article class="product-card">
+
+      <!-- Product Image -->
+      <picture class="product-image">
+
+        <source
+          media="(max-width: 600px)"
+          srcset="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=85"
+        >
+
+        <img
+          src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=85"
+          alt="Perfume bottle"
+        >
+
+      </picture>
+
+      <!-- Product Information -->
+      <section class="product-info">
+
+        <!-- Product Category -->
+        <p class="category">PERFUME</p>
+
+        <!-- Product Name -->
+        <h1>Gabrielle Essence Eau De Parfum</h1>
+
+        <!-- Product Description -->
+        <p class="description">
+          A floral, solar and voluptuous interpretation composed by
+          Olivier Polge, Perfumer-Creator for the House of CHANEL.
+        </p>
+
+        <!-- Product Prices -->
+        <div class="prices">
+
+          <span class="current-price">$149.99</span>
+
+          <span class="original-price">
+            <span class="sr-only">Original price: </span>
+            $169.99
+          </span>
+
+        </div>
+
+        <!-- Add to Cart Button -->
+        <button
+          class="cart-button"
+          type="button"
+          aria-label="Add perfume to cart"
+        >
+
+          <!-- Shopping Cart Icon -->
+          <svg
+            class="cart-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M1 1H3L5 11H13L15 4H4"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <circle
+              cx="6"
+              cy="14"
+              r="1.2"
+              fill="currentColor"
+            />
+
+            <circle
+              cx="12"
+              cy="14"
+              r="1.2"
+              fill="currentColor"
+            />
+
+          </svg>
+
+          <span>Add to Cart</span>
+
+        </button>
+
+        <!-- Button Feedback -->
+        <p
+          class="cart-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+      </section>
+
+    </article>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script>
+    const cartButton = document.querySelector(".cart-button");
+    const cartMessage = document.querySelector(".cart-message");
+
+    cartButton.addEventListener("click", function () {
+      cartMessage.textContent = "Product added to cart!";
+    });
+  </script>
+
+</body>
+</html>
